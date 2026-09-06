@@ -1,42 +1,323 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
 
-# This workflow will install Deno then run `deno lint` and `deno test`.
-# For more information see: https://github.com/denoland/setup-deno
+Skip to content
 
-name: Deno
+    Ghostv13-dev
+    TELEGRAM-BOT
 
-on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+Repository navigation
 
-permissions:
-  contents: read
+    Code
+    Pull requests
+    Agents
+    Actions
+    Projects
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
+Deno
+Add Deno workflow for linting and testing #1
+Annotations
+1 error and 1 warning
+test
+failed yesterday in 7s
+1s
+1s
+2s
+1s
+Run deno lint
+error[require-await]: Async function 'listDestinations' has no 'await' expression or 'await using' declaration.
+  --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/destinations.ts:17:8
+   | 
+17 | export async function listDestinations() {
+   |        ^^^^^
+   = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
 
-    steps:
-      - name: Setup repo
-        uses: actions/checkout@v4
+  docs: https://lint.deno.land/rules/require-await
 
-      - name: Setup Deno
-        # uses: denoland/setup-deno@v1
-        uses: denoland/setup-deno@61fe2df320078202e33d7d5ad347e7dcfa0e8f31  # v1.1.2
-        with:
-          deno-version: v1.x
 
-      # Uncomment this step to verify the use of 'deno fmt' on each commit.
-      # - name: Verify formatting
-      #   run: deno fmt --check
+error[require-await]: Async function 'listPendingAccessRequests' has no 'await' expression or 'await using' declaration.
+  --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/accessRequests.ts:20:8
+   | 
+20 | export async function listPendingAccessRequests() {
+   |        ^^^^^
+   = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
 
-      - name: Run linter
-        run: deno lint
+  docs: https://lint.deno.land/rules/require-await
 
-      - name: Run tests
-        run: deno test -A
+
+error[no-explicit-any]: `any` type is not allowed
+  --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/support.ts:54:20
+   | 
+54 |   message: { from: any; chat: any; message_id: number; text?: string },
+   |                    ^^^
+   = hint: Use a specific type other than `any`
+
+  docs: https://lint.deno.land/rules/no-explicit-any
+
+
+error[no-explicit-any]: `any` type is not allowed
+  --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/support.ts:54:31
+   | 
+54 |   message: { from: any; chat: any; message_id: number; text?: string },
+   |                               ^^^
+   = hint: Use a specific type other than `any`
+
+  docs: https://lint.deno.land/rules/no-explicit-any
+
+
+error[require-await]: Async function 'listOpenTickets' has no 'await' expression or 'await using' declaration.
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/support.ts:100:8
+    | 
+100 | export async function listOpenTickets() {
+    |        ^^^^^
+    = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[require-await]: Async function 'getTicketMessages' has no 'await' expression or 'await using' declaration.
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/support.ts:108:8
+    | 
+108 | export async function getTicketMessages(ticketId: number) {
+    |        ^^^^^
+    = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[no-explicit-any]: `any` type is not allowed
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/support.ts:149:24
+    | 
+149 |   joinRequest: { chat: any; from: any },
+    |                        ^^^
+    = hint: Use a specific type other than `any`
+
+  docs: https://lint.deno.land/rules/no-explicit-any
+
+
+error[no-explicit-any]: `any` type is not allowed
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/support.ts:149:35
+    | 
+149 |   joinRequest: { chat: any; from: any },
+    |                                   ^^^
+    = hint: Use a specific type other than `any`
+
+  docs: https://lint.deno.land/rules/no-explicit-any
+
+
+error[no-unused-vars]: `CONTENT_STATUSES` is never used
+  --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:44:7
+   | 
+44 | const CONTENT_STATUSES = ["draft", "published", "archived"];
+   |       ^^^^^^^^^^^^^^^^
+   = hint: If this is intentional, prefix it with an underscore like `_CONTENT_STATUSES`
+
+  docs: https://lint.deno.land/rules/no-unused-vars
+
+
+error[require-await]: Async method 'scheduled' has no 'await' expression or 'await using' declaration.
+  --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:77:3
+   | 
+77 |   async scheduled(event, env, ctx) {
+   |   ^^^^^
+   = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[no-unused-vars]: `event` is never used
+  --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:77:19
+   | 
+77 |   async scheduled(event, env, ctx) {
+   |                   ^^^^^
+   = hint: If this is intentional, prefix it with an underscore like `_event`
+
+  docs: https://lint.deno.land/rules/no-unused-vars
+
+
+error[require-await]: Async function 'routeUpdate' has no 'await' expression or 'await using' declaration.
+  --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:86:1
+   | 
+86 | async function routeUpdate(update, env, ctx) {
+   | ^^^^^
+   = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[no-unused-vars]: `ctx` is never used
+  --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:86:41
+   | 
+86 | async function routeUpdate(update, env, ctx) {
+   |                                         ^^^
+   = hint: If this is intentional, prefix it with an underscore like `_ctx`
+
+  docs: https://lint.deno.land/rules/no-unused-vars
+
+
+error[no-unused-vars]: `args` is never used
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:113:20
+    | 
+113 |   const { command, args } = normalizeCommand(message.text, env.BOT_USERNAME);
+    |                    ^^^^
+    = hint: If this is intentional, prefix it with an underscore like `_args`
+
+  docs: https://lint.deno.land/rules/no-unused-vars
+
+
+error[require-await]: Async function 'handleMenuCallback' has no 'await' expression or 'await using' declaration.
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:186:1
+    | 
+186 | async function handleMenuCallback(data, chatId, messageId, env) {
+    | ^^^^^
+    = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[require-await]: Async function 'handleJoinRequest' has no 'await' expression or 'await using' declaration.
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:223:1
+    | 
+223 | async function handleJoinRequest(joinRequest, env) {
+    | ^^^^^
+    = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[require-await]: Async function 'sendPanel' has no 'await' expression or 'await using' declaration.
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:227:1
+    | 
+227 | async function sendPanel(chatId, env, messageId) {
+    | ^^^^^
+    = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[require-await]: Async method 'showMenu' has no 'await' expression or 'await using' declaration.
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:245:3
+    | 
+245 |   async showMenu(chatId, env, messageId) {
+    |   ^^^^^
+    = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[no-unused-vars]: `userId` is never used
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:261:49
+    | 
+261 |   async handleCallback(data, chatId, messageId, userId, env) {
+    |                                                 ^^^^^^
+    = hint: If this is intentional, prefix it with an underscore like `_userId`
+
+  docs: https://lint.deno.land/rules/no-unused-vars
+
+
+error[require-await]: Async method 'sendMessage' has no 'await' expression or 'await using' declaration.
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:656:3
+    | 
+656 |   async sendMessage(env, chatId, text, replyMarkup) {
+    |   ^^^^^
+    = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[require-await]: Async method 'editMessageText' has no 'await' expression or 'await using' declaration.
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:660:3
+    | 
+660 |   async editMessageText(env, chatId, messageId, text, replyMarkup) {
+    |   ^^^^^
+    = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[require-await]: Async method 'answerCallbackQuery' has no 'await' expression or 'await using' declaration.
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:664:3
+    | 
+664 |   async answerCallbackQuery(env, callbackQueryId, text) {
+    |   ^^^^^
+    = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[require-await]: Async method 'approveChatJoinRequest' has no 'await' expression or 'await using' declaration.
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:668:3
+    | 
+668 |   async approveChatJoinRequest(env, chatId, userId) {
+    |   ^^^^^
+    = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[require-await]: Async method 'declineChatJoinRequest' has no 'await' expression or 'await using' declaration.
+   --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/index.js:672:3
+    | 
+672 |   async declineChatJoinRequest(env, chatId, userId) {
+    |   ^^^^^
+    = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[require-await]: Async arrow function has no 'await' expression or 'await using' declaration.
+  --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/main.ts:56:24
+   | 
+56 | bot.on("message:text", async (ctx) => {
+   |                        ^^^^^
+   = hint: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  docs: https://lint.deno.land/rules/require-await
+
+
+error[ban-unknown-rule-code]: Unknown rule for code "no-import-prefix"
+ --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/platform.deno.ts:1:1
+  | 
+1 | // deno-lint-ignore-file no-import-prefix
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  docs: https://lint.deno.land/rules/ban-unknown-rule-code
+
+
+error[ban-unknown-rule-code]: Unknown rule for code "no-import-prefix"
+ --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/types.web.ts:1:1
+  | 
+1 | // deno-lint-ignore-file no-import-prefix
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  docs: https://lint.deno.land/rules/ban-unknown-rule-code
+
+
+error[ban-unknown-rule-code]: Unknown rule for code "no-import-prefix"
+ --> /home/runner/work/TELEGRAM-BOT/TELEGRAM-BOT/types.deno.ts:1:1
+  | 
+1 | // deno-lint-ignore-file no-import-prefix
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  docs: https://lint.deno.land/rules/ban-unknown-rule-code
+
+
+Found 28 problems
+Checked 30 files
+Error: Process completed with exit code 1.
+0s
+0s
+0s
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+
+    Terms
+    Privacy
+    Security
+    Status
+    Community
+    Docs
+    Contact
+    Manage cookies
+    Do not share my personal information
+
+ 
